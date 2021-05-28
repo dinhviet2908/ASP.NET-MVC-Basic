@@ -22,3 +22,4 @@ D:\Study\My Documents\Learn .NET\ASP.NET-MVC-Basic\MVCCoreApp\MVCCoreApp\obj\Deb
 D:\Study\My Documents\Learn .NET\ASP.NET-MVC-Basic\MVCCoreApp\MVCCoreApp\obj\Debug\netcoreapp2.1\MVCCoreApp.RazorTargetAssemblyInfo.cs
 D:\Study\My Documents\Learn .NET\ASP.NET-MVC-Basic\MVCCoreApp\MVCCoreApp\obj\Debug\netcoreapp2.1\MVCCoreApp.Views.pdb
 D:\Study\My Documents\Learn .NET\ASP.NET-MVC-Basic\MVCCoreApp\MVCCoreApp\obj\Debug\netcoreapp2.1\MVCCoreApp.csproj.CopyComplete
+D:\Study\My Documents\Learn .NET\ASP.NET-MVC-Basic\MVCCoreApp\MVCCoreApp\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Index.cshtml.g.cs
