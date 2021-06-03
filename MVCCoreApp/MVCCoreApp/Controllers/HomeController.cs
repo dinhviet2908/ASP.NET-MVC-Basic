@@ -9,10 +9,11 @@ namespace MVCCoreApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [Route("Home/Index/{id:int}")]
+        public IActionResult Index(int id)
         {
             var model = new IndexModel();
-            model.Message = "Hello model";
+            model.Message = "Hello model with Id = " + id;
             return View(model);
         }
     }

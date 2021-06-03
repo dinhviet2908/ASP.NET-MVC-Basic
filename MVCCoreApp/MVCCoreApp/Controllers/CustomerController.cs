@@ -14,7 +14,7 @@ namespace MVCCoreApp.Controllers
             return "Customer1";
         }
 
-        [Route("")]
+        //[Route("")]
         [Route("Customer/Customer2")]
         public string Customer2()
         {

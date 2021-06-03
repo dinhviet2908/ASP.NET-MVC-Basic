@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,23 @@ namespace MVCCoreApp
             }
 
             //app.UseMvcWithDefaultRoute();
-            app.UseMvc();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
-            //});
+            //app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id:int?}");
+                //routes.MapRoute("default", "{controller=Home}/{action=Index}/{id}",
+                //    new { controller = "Home", action = "Index" },
+                //    new { id = new IntRouteConstraint()});
+                //routes.MapRoute("default", "post/{id:int}",
+                //    new { controller = "Post", action = "PostByID" });
+                //routes.MapRoute("anotherRoute", "post/{id:alpha}",
+                //    new { controller = "Post", action = "PostByPostName" });
+
+                //int, alpha, bool, datetime, decimal, double, float, guid
+                //{id:length(12)}, minlength, maxlength, range ...
+                //regrex
+                //{id:alpha:minlength(6)}
+            });
 
             app.Run(async (context) =>
             {
