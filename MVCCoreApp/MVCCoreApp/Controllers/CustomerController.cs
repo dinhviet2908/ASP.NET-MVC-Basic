@@ -8,9 +8,17 @@ namespace MVCCoreApp.Controllers
 {
     public class CustomerController : Controller
     {
-        public IActionResult Index()
+        [Route("Customer/Customer1")]
+        public string Customer1()
         {
-            return View();
+            return "Customer1";
+        }
+
+        [Route("")]
+        [Route("Customer/Customer2")]
+        public string Customer2()
+        {
+            return "Customer2";
         }
     }
 }
