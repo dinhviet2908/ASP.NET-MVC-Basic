@@ -9,10 +9,26 @@ namespace MVCCoreApp.Controllers
 {
     public class ProductController : Controller
     {
-
+        public List<ProductModel> products = new List<ProductModel>()
+        {
+            new ProductModel(){
+                Id = 1,
+                Available = true,
+                Name = "Pro1",
+                Price = 10000,
+                PromotionPrice = 8000
+            },
+            new ProductModel(){
+                Id = 2,
+                Available = false,
+                Name = "Pro12",
+                Price = 20000,
+                PromotionPrice = 18000
+            }
+        };
         public IActionResult Index()
         {
-            return View();
+            return View(products);
         }
         //Fail: http://localhost:port/product/edit
         //Ok: http://localhost:port/product/modify

@@ -1,0 +1,60 @@
+﻿@using MVCCoreApp.Models
+@model List<ProductModel>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product view</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Available
+                </th>
+                <th>
+                    PromotionPrice
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>
+                            @{
+                                if (product.Available == true)
+                                {
+                                    <strong>Available</strong>
+                                }
+                                else
+                                {
+                                    <strong>Out of stock</strong>
+                                }
+                            }
+                        </td>
+                        <td>@product.PromotionPrice</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
