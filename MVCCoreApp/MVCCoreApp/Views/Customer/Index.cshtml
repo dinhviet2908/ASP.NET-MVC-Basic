@@ -1,9 +1,24 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@using MVCCoreApp.Models.Customer
+@model Customer
+@{ 
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width"/>
     <title>Customer Index</title>
 </head>
 <body>
     <h1>Hello from customer index </h1>
+    @{
+        //Customer customer = ViewBag.Customer;
+        @*<p>Id: @customer.CustomerId</p>
+        <p>Name: @customer.Name</p>
+        <p>Address: @customer.Address</p>*@
+        <p>Id: @Model.CustomerId</p>
+        <p>Name: @Model.Name</p>
+        <p>Address: @Model.Address</p>
+    }
 </body>
 </html>
