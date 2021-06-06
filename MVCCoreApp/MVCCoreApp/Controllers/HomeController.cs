@@ -11,12 +11,23 @@ namespace MVCCoreApp.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("Home/Index/{id:int}")]
-        public IActionResult Index(int id)
+        //[Route("Home/Index/{id:int}")]
+        //public IActionResult Index(int id)
+        //{
+        //    var model = new IndexModel();
+        //    model.Message = "Hello model with Id = " + id;
+        //    return View(model);
+        //}
+
+        public IActionResult Index()
         {
-            var model = new IndexModel();
-            model.Message = "Hello model with Id = " + id;
-            return View(model);
+            ViewData["Greeting"] = "Hello world";
+            ViewData["IndexModel"] = new IndexModel() {
+                Message = "Say hello"
+            };
+
+            ViewBag.SayGoodbye = "Goodbye";
+            return View();
         }
 
         //HttpContext ctx;
