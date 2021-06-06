@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCCoreApp.Models;
+using MVCCoreApp.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,10 +42,22 @@ namespace MVCCoreApp.Controllers
             return "From edit method";
         }
 
-        [HttpPost]
-        public IActionResult Edit(ProductModel model)
+        [HttpGet]
+        public IActionResult Create()
         {
-            return RedirectToAction("Index","Product");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(ProductEditModel model)
+        {
+            string message = string.Empty;
+            if (ModelState.IsValid)
+            {
+                message = "Product: " + model.Name + ". Rate: " + model.Rate + ". Rating: " + model.Rating + " created!";
+            }
+            else message = "Failed to create product!";
+            return Content(message);
         }
     }
 }
