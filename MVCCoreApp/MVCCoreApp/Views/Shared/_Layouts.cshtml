@@ -6,14 +6,24 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Layout</title>
+    @RenderSection("header",false)
 </head>
 <body>
-    <h1>Hello from layout </h1>
-    <article>
+    <div id="header">
+        <h1>Layout examole in HTML</h1>
+    </div>
+    <div id="content">
         @RenderBody()
-    </article>
-    <footer>
+    </div>
+    <div id="footer">
+        <p>This is footer</p>
+    </div>
+    @*<article>
+        @RenderBody()
+    </article>*@
+    @*<footer>
         Footer
-    </footer>
+    </footer>*@
+    @RenderSection("footer", false)
 </body>
 </html>
