@@ -68,5 +68,38 @@ namespace MVCCoreApp.Controllers
             else message = "Failed to create product!";
             return Content(message);
         }
+
+        [HttpPost]
+        public IActionResult NoModelBinding()
+        {
+            var model = new ProductEditModel();
+            string message = "";
+
+            model.Name = Request.Form["Name"].ToString();
+            model.Rate = Convert.ToDecimal(Request.Form["Rate"]);
+            model.Rating = Convert.ToInt32(Request.Form["Rating"]);
+
+            message = "product " + model.Name + " created!";
+            return Content(message);
+        }
+
+        [HttpGet]
+        public IActionResult FormAndQuery()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FormAndQuery([FromQuery] string name, ProductEditModel productEditModel)
+        {
+            string message = string.Empty;
+            if (ModelState.IsValid)
+            {
+                message = "Query: " + name + "Product: " + productEditModel.Name + ". Rate: " + productEditModel.Rate + ". Rating: " + productEditModel.Rating + " created!";
+            }
+            else message = "Failed to create product!";
+            return Content(message);
+        }
+
     }
 }
