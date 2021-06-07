@@ -13,9 +13,13 @@
         <label asp-for="Name"></label>
         <input type="text" asp-for="Name" value="" />
         <label asp-for="Rate"></label>
-        <input type="text" asp-for="Rate" value="" />
+        <input type="text" asp-for="Rate" asp-format="{0:N0}" value="" />
         <label asp-for="Rating"></label>
         <input type="text" asp-for="Rating" value="" />
+        <label asp-for="Email"></label>
+        <input asp-for="Email" value="" />
+        <label asp-for="CreateDate"></label>
+        <input asp-for="CreateDate" value="" />
         <input type="submit" name="submit" value="Submit" />
     </form>
 </body>
