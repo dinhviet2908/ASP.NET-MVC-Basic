@@ -36,16 +36,25 @@ namespace MVCCoreApp.Controllers
         //[ActionName("Modify")] // ~~ [Route("Product/Modify")]
         //[NonAction]
 
-        [HttpGet]
-        public string Edit(string id)
-        {
-            return "From edit method";
-        }
+        //[HttpGet]
+        //public string Edit(string id)
+        //{
+        //    return "From edit method";
+        //}
 
         [HttpGet]
         public IActionResult Create()
         {
             return View();
+        }
+
+        public IActionResult Edit()
+        {
+            var model = new ProductEditModel()
+            {
+                Name = "Test"
+            };
+            return View(model);
         }
 
         [HttpPost]
