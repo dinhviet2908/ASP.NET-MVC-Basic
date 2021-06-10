@@ -63,9 +63,14 @@ namespace MVCCoreApp.Controllers
             string message = string.Empty;
             if (ModelState.IsValid)
             {
+                if (model.Name == "test")
+                {
+                    ModelState.AddModelError("", "This name was exists!");
+                    return View(model);
+                }
                 message = "Product: " + model.Name + ". Rate: " + model.Rate + ". Rating: " + model.Rating + " created!";
             }
-            else message = "Failed to create product!";
+            else return View(model);
             return Content(message);
         }
 

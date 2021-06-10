@@ -10,6 +10,7 @@ namespace MVCCoreApp.Models.Product
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Error message was changed!")]
+        [StringLength(maximumLength:25, MinimumLength = 3, ErrorMessage = "Length name must be in range from 3 to 25!")]
         public string Name { get; set; }
         public decimal Rate { get; set; }
         public int Rating { get; set; }
