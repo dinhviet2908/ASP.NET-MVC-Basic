@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCCoreApp.Models;
 using MVCCoreApp.Models.Product;
+using MVCCoreApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,19 @@ namespace MVCCoreApp.Controllers
 {
     public class ProductController : Controller
     {
+        //không dùng DI
+        //private readonly ProductService _productService;
+        //public ProductController()
+        //{
+        //    _productService = new ProductService();
+        //}
+
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
+        {
+            _productService = productService;
+        }
+
         public List<ProductModel> products = new List<ProductModel>()
         {
             new ProductModel(){

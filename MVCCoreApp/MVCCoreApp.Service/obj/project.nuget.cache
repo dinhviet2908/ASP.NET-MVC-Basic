@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HyvGp6UipbtEVRGNGqBYTL8LVIii1144mii/hNg4JaxidfEU9TeWa2zy8YQ2nEzYWUlAgbMBaziHRj8KdtR94A==",
+  "success": true,
+  "projectFilePath": "D:\\Study\\My Documents\\Learn .NET\\ASP.NET-MVC-Basic\\MVCCoreApp\\MVCCoreApp.Service\\MVCCoreApp.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
